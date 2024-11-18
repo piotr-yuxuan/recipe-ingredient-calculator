@@ -12,6 +12,7 @@ const RecipeList = () => {
       ingredients: [
         { name: "Orange Oil", quantity: 5, unit: "mL" },
         { name: "Lemon Oil", quantity: 2.5, unit: "mL" },
+        { name: "Heather Oil", quantity: 1, unit: "mL" },
       ],
     },
     {
