@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const RecipeForm = ({ onSave, recipeToEdit, onCancel }) => {
+const RecipeForm: React.FC = ({ onSave, recipeToEdit, onCancel }) => {
   const [name, setName] = useState(recipeToEdit?.name || "");
   const [description, setDescription] = useState(recipeToEdit?.description || "");
   const [ingredients, setIngredients] = useState(recipeToEdit?.ingredients || [

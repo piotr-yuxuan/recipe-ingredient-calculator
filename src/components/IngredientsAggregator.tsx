@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const IngredientsAggregator = ({ recipes, onBack }) => {
+const IngredientsAggregator: React.FC = ({ recipes, onBack }) => {
   const [recipeQuantities, setRecipeQuantities] = useState(
     recipes.reduce((acc, recipe) => {
       acc[recipe.id] = 0; // Default quantity is 0

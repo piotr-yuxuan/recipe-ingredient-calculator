@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import RecipeForm from "./RecipeForm";
 import IngredientsAggregator from "./IngredientsAggregator";
 
-const RecipeList = () => {
+const RecipeList: React.FC = () => {
   const [recipes, setRecipes] = useState([
     {
       id: 1,
