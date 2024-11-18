@@ -1,8 +1,9 @@
+// @ts-nocheck
 import React, { useState } from "react";
 import RecipeForm from "./RecipeForm";
 import IngredientsAggregator from "./IngredientsAggregator";
 
-const RecipeList: React.FC = () => {
+const RecipeList = () => {
   const [recipes, setRecipes] = useState([
     {
       id: 1,
