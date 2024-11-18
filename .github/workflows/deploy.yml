@@ -1,0 +1,38 @@
+name: Build and Deploy
+
+on:
+  push:
+    branches:
+      - main # Trigger this workflow when code is pushed to the main branch
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Check out the repository
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      # Step 2: Set up Node.js
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18 # Use the Node.js version compatible with your project
+
+      # Step 3: Install dependencies
+      - name: Install dependencies
+        run: npm install
+
+      # Step 4: Build the project
+      - name: Build the project
+        run: npm run build
+
+      # Step 5: Deploy to main branch
+      - name: Deploy built code to main
+        run: |
+          mv ./dist/* ./
+          rm -rf ./src ./public ./node_modules ./dist ./vite.config.js ./package.json ./package-lock.json
+          git add .
+          git commit -m "Deploy built app to main branch [skip ci]"
+          git push
